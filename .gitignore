@@ -9,5 +9,4 @@
 # Variable values for development
 terraform.tfvars
 
-# Softlayer slcli config
-softlayer
+

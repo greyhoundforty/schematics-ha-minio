@@ -1,0 +1,6 @@
+[softlayer]
+username = YOUR_SOFTLAYER_USERNAME
+api_key = YOUR_SOFTLAYER_API_KEY
+endpoint_url = https://api.softlayer.com/xmlrpc/v3.1/
+timeout = 120
+

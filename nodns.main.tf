@@ -4,6 +4,7 @@
 # Required for the IBM Cloud provider for Bluemix resources
 variable slusername {}
 variable slapikey {}
+
 variable "accesskey" {
   type        = "string"
   description = "Your minio access key."
@@ -196,62 +197,3 @@ resource "ibm_compute_vm_instance" "s4" {
     ]
   }
 }
-
-
-##############################################################################
-# Creating the DNS entries
-# https://ibm-bluemix.github.io/tf-ibm-docs/v0.4.0/r/dns_record.html
-##############################################################################
-
-# Load the domain as `domain_id` to be used when creating the DNS records
-data "ibm_dns_domain" "domain_id" {
-    name = "example.com"
-}
-
-
-resource "ibm_dns_record" "minio" {
-    data = "${ibm_compute_vm_instance.minio.ipv4_address}"
-    domain_id = "${data.ibm_dns_domain.domain_id.id}"
-    host = "minio"
-    responsible_person = "user@example.com"
-    ttl = 900
-    type = "a"
-}
-
-resource "ibm_dns_record" "s1" {
-    data = "${ibm_compute_vm_instance.s1.ipv4_address_private}"
-    domain_id = "${data.ibm_dns_domain.domain_id.id}"
-    host = "s1"
-    responsible_person = "user@example.com"
-    ttl = 900
-    type = "a"
-}
-
-
-resource "ibm_dns_record" "s2" {
-    data = "${ibm_compute_vm_instance.s2.ipv4_address_private}"
-    domain_id = "${data.ibm_dns_domain.domain_id.id}"
-    host = "s2"
-    responsible_person = "user@example.com"
-    ttl = 900
-    type = "a"
-}
-
-resource "ibm_dns_record" "s3" {
-    data = "${ibm_compute_vm_instance.s3.ipv4_address_private}"
-    domain_id = "${data.ibm_dns_domain.domain_id.id}"
-    host = "s3"
-    responsible_person = "user@example.com"
-    ttl = 900
-    type = "a"
-}
-
-resource "ibm_dns_record" "s4" {
-    data = "${ibm_compute_vm_instance.s4.ipv4_address_private}"
-    domain_id = "${data.ibm_dns_domain.domain_id.id}"
-    host = "s4"
-    responsible_person = "user@example.com"
-    ttl = 900
-    type = "a"
-}
-
