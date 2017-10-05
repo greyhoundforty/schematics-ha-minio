@@ -1,5 +1,6 @@
 # schematics-ha-minio
-Example repo for deploying a distributed minio cluster using IBM Schematics (terraform) **NOT CURRENTLY READY FOR PRIME TIME**
+**NOT CURRENTLY READY FOR PRIME TIME**
+Example repo for deploying a distributed minio cluster using IBM Schematics (terraform) 
 
 ## Pre-requisites
  - SoftLayer username and API key. Instructions on generating an API key can be found [here](http://knowledgelayer.softlayer.com/procedure/generate-api-key).
