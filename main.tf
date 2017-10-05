@@ -2,7 +2,6 @@
 # Variables
 ##############################################################################
 # Required for the IBM Cloud provider for Bluemix resources
-variable bxapikey {}
 variable slusername {}
 variable slapikey {}
 
@@ -11,7 +10,6 @@ variable slapikey {}
 # https://ibm-bluemix.github.io/tf-ibm-docs/
 ##############################################################################
 provider "ibm" {
-  bluemix_api_key    = "${var.bxapikey}"
   softlayer_username = "${var.slusername}"
   softlayer_api_key  = "${var.slapikey}"
 }
