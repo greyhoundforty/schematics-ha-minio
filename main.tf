@@ -43,7 +43,7 @@ resource "ibm_compute_vm_instance" "minio" {
     local_disk = false
     ssh_key_ids = ["${data.ibm_compute_ssh_key.YOURSSHKEYNAME.id}"]
     provisioner "file" {
-    source      = "softlayer"
+    source      = "$HOME/.softlayer"
     destination = "/root/.softlayer"
     }
     provisioner "file" {
@@ -83,7 +83,7 @@ resource "ibm_compute_vm_instance" "s1" {
     user_metadata = "{\"MINIO_ACCESS_KEY=YOURSUPERAWESOMEACCESSKEY\" : \"MINIO_SECRET_KEY=YOURSUPERAWESOMESECRETKEY\"}"
     ssh_key_ids = ["${data.ibm_compute_ssh_key.YOURSSHKEYNAME.id}"]
     provisioner "file" {
-    source      = "softlayer"
+    source      = "$HOME/.softlayer"
     destination = "/root/.softlayer"
 }
     provisioner "file" {
@@ -113,7 +113,7 @@ resource "ibm_compute_vm_instance" "s2" {
     user_metadata = "{\"MINIO_ACCESS_KEY=YOURSUPERAWESOMEACCESSKEY\" : \"MINIO_SECRET_KEY=YOURSUPERAWESOMESECRETKEY\"}"
     ssh_key_ids = ["${data.ibm_compute_ssh_key.YOURSSHKEYNAME.id}"]
     provisioner "file" {
-    source      = "softlayer"
+    source      = "$HOME/.softlayer"
     destination = "/root/.softlayer"
 }
     provisioner "file" {
@@ -144,7 +144,7 @@ resource "ibm_compute_vm_instance" "s3" {
     user_metadata = "{\"MINIO_ACCESS_KEY=YOURSUPERAWESOMEACCESSKEY\" : \"MINIO_SECRET_KEY=YOURSUPERAWESOMESECRETKEY\"}"
     ssh_key_ids = ["${data.ibm_compute_ssh_key.YOURSSHKEYNAME.id}"]
     provisioner "file" {
-    source      = "softlayer"
+    source      = "$HOME/.softlayer"
     destination = "/root/.softlayer"
 }
     provisioner "file" {
@@ -175,7 +175,7 @@ resource "ibm_compute_vm_instance" "s4" {
     user_metadata = "{\"MINIO_ACCESS_KEY=YOURSUPERAWESOMEACCESSKEY\" : \"MINIO_SECRET_KEY=YOURSUPERAWESOMESECRETKEY\"}"
     ssh_key_ids = ["${data.ibm_compute_ssh_key.YOURSSHKEYNAME.id}"]
     provisioner "file" {
-    source      = "softlayer"
+    source      = "$HOME/.softlayer"
     destination = "/root/.softlayer"
     }
     provisioner "file" {
